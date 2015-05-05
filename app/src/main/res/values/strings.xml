@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ParallaxEffectDemo</string>
+
+    <string name="lorm_ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.dolor sit amet, consectetur adipisicing elit</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_yahoo_parallax">YahooParallaxActivity</string>
+    <string name="title_activity_normal_parallax">NormalParallaxActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>

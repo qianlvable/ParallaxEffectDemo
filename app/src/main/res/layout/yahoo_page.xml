@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lvable.parallaxeffectdemo.NotifyingScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@drawable/p1"
+            android:id="@+id/cover_img"/>
+        <com.lvable.parallaxeffectdemo.SharpRectView
+            android:id="@+id/sharp_rect"
+            android:layout_below="@id/cover_img"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="-120dp"
+            />
+        <TextView
+            android:id="@+id/title"
+            android:layout_alignTop="@id/sharp_rect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is a title"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="9dp"
+            android:textSize="28sp"/>
+        <TextView
+            android:id="@+id/content_text"
+            android:layout_alignLeft="@id/title"
+            android:layout_below="@id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lorm_ipsum"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="2dp"
+            android:paddingRight="6dp"
+            />
+
+        <TextView
+            android:layout_below="@id/content_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/title"
+            android:text="@string/lorm_ipsum"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="2dp"/>
+    </RelativeLayout>
+</com.lvable.parallaxeffectdemo.NotifyingScrollView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+                android:background="@drawable/p1"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="A Large Title"
+        android:id="@+id/title_big"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="45sp"
+        android:textColor="#fff"
+        android:layout_marginTop="70dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/icon_img"
+        android:src="@drawable/icon1"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="20sp"
+        android:text="   An awesome parallax effect!\nBring more joy to the user"
+        android:id="@+id/small_title"
+        android:layout_below="@+id/icon_img"
+        android:layout_centerInParent="true"
+        android:textColor="#fff"
+        android:layout_marginTop="32dp"/>
+</RelativeLayout>
