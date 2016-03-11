@@ -11,8 +11,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Yahoo digest effect"
-        android:id="@+id/btn1"
+        android:text="@string/yahoo_effect_text"
+        android:id="@+id/btn_yahoo_effect"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
@@ -21,9 +21,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Normal parallex effect"
-        android:id="@+id/btn2"
-        android:layout_below="@+id/btn1"
+        android:text="@string/normal_parallax_text"
+        android:id="@+id/btn_normal_effect"
+        android:layout_below="@+id/btn_yahoo_effect"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         />
@@ -37,7 +37,7 @@
         android:progress="50"
 />
     <TextView
-        android:text="Parallax speed"
+        android:text="@string/parallax_speed_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
@@ -47,7 +47,7 @@
         android:id="@+id/distance_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Distance effect"
+        android:text="@string/distance_val_title"
         android:layout_below="@id/speed_seekbar"
         android:layout_marginTop="30dp"/>
     <SeekBar

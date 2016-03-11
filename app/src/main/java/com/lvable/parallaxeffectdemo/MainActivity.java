@@ -1,14 +1,10 @@
 package com.lvable.parallaxeffectdemo;
 
 import android.content.Intent;
-import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.SeekBar;
 
@@ -16,21 +12,22 @@ import android.widget.SeekBar;
 public class MainActivity extends ActionBarActivity implements View.OnClickListener,
         SeekBar.OnSeekBarChangeListener{
 
-    public static enum TYPE {YAHOO_TYPE,NORMAL_TYPE};
+    public enum TYPE {YAHOO_TYPE,NORMAL_TYPE};
     private float mDistanceVal = 0.6f;
     private float mSpeedVal = 0.6f;
+    private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn1 = (Button)findViewById(R.id.btn1);
-        Button btn2 = (Button)findViewById(R.id.btn2);
+        Button btnYahoo = (Button)findViewById(R.id.btn_yahoo_effect);
+        Button btnNormal = (Button)findViewById(R.id.btn_normal_effect);
         SeekBar speedSeekBar = (SeekBar)findViewById(R.id.speed_seekbar);
         SeekBar distanceSeekBar = (SeekBar)findViewById(R.id.distance_seekbar);
 
-        btn1.setOnClickListener(this);
-        btn2.setOnClickListener(this);
+        btnYahoo.setOnClickListener(this);
+        btnNormal.setOnClickListener(this);
 
         speedSeekBar.setOnSeekBarChangeListener(this);
         distanceSeekBar.setOnSeekBarChangeListener(this);
@@ -38,32 +35,29 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.btn1){
-            Intent intent = new Intent(MainActivity.this,YahooParallaxActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putFloat("speed",mSpeedVal);
-            intent.putExtra("yahoo", bundle);
+        Bundle bundle = new Bundle();
+        bundle.putFloat(BundleKey.PARALLAX_SPEED, mSpeedVal);
+        if (view.getId() == R.id.btn_yahoo_effect){
+            Intent intent = new Intent(MainActivity.this, YahooParallaxActivity.class);
+            intent.putExtra(BundleKey.TYPE_YAHOO, bundle);
             startActivity(intent);
-        }else if (view.getId() == R.id.btn2){
-            Intent intent = new Intent(MainActivity.this,NormalParallaxActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putFloat("speed",mSpeedVal);
-            bundle.putFloat("distance",mDistanceVal);
-            intent.putExtra("normal",bundle);
+        }else if (view.getId() == R.id.btn_normal_effect){
+            Intent intent = new Intent(MainActivity.this, NormalParallaxActivity.class);
+            bundle.putFloat(BundleKey.PARALLAX_DISTANCE, mDistanceVal);
+            intent.putExtra(BundleKey.TYPE_NORMAL, bundle);
             startActivity(intent);
         }
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-        Log.d("wtf","seek val "+i);
+        Log.d(TAG,"seek val "+i);
         if (seekBar.getId() == R.id.distance_seekbar){
-
             mDistanceVal = 1-i/100f;
-            Log.d("wtf","distance " + mDistanceVal);
+            Log.d(TAG,"distance " + mDistanceVal);
         }else{
             mSpeedVal = i/100f;
-            Log.d("wtf","speed "+mSpeedVal);
+            Log.d(TAG,"speed "+mSpeedVal);
         }
     }
 

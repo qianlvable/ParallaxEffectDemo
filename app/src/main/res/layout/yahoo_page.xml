@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.lvable.parallaxeffectdemo.NotifyingScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.lvable.parallaxeffectdemo.view.NotifyingScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
@@ -13,7 +13,7 @@
             android:layout_height="400dp"
             android:src="@drawable/p1"
             android:id="@+id/cover_img"/>
-        <com.lvable.parallaxeffectdemo.SharpRectView
+        <com.lvable.parallaxeffectdemo.view.SharpRectView
             android:id="@+id/sharp_rect"
             android:layout_below="@id/cover_img"
             android:layout_width="match_parent"
@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:text="@string/lorm_ipsum"
             android:layout_marginTop="8dp"
+            android:textSize="16sp"
             android:lineSpacingExtra="2dp"
             android:paddingRight="6dp"
             />
@@ -46,8 +47,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/title"
+            android:textSize="16sp"
             android:text="@string/lorm_ipsum"
             android:layout_marginTop="5dp"
-            android:lineSpacingExtra="2dp"/>
+            android:lineSpacingExtra="6dp"/>
     </RelativeLayout>
-</com.lvable.parallaxeffectdemo.NotifyingScrollView>
+</com.lvable.parallaxeffectdemo.view.NotifyingScrollView>

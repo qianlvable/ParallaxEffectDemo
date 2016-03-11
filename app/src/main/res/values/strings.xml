@@ -7,4 +7,8 @@
     <string name="title_activity_normal_parallax">NormalParallaxActivity</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="yahoo_effect_text">Yahoo digest effect</string>
+    <string name="normal_parallax_text">Normal parallax effect</string>
+    <string name="distance_val_title">Distance effect</string>
+    <string name="parallax_speed_title">Parallax speed</string>
 </resources>

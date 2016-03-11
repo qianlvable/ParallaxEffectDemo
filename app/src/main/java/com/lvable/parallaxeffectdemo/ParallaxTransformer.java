@@ -7,17 +7,22 @@ import android.view.View;
  * Created by Jiaqi Ning on 28/4/2015.
  */
 public class ParallaxTransformer implements ViewPager.PageTransformer {
-    private boolean isSpeedReverse;
     private int[] resIds;
     private float speedEffect;
     private float distanceEffect;
 
-    public ParallaxTransformer(float speed,float distance,
+    /**
+     * The parallax effect PageTransformer
+     * @param speed the parallax effect common move speed
+     * @param viewDistance the object`s view view distance(景深）
+     * @param resIds view`s res id that will have parallax effect
+     * @param isSpeedReverse moving forward or backward
+     * */
+    public ParallaxTransformer(float speed,float viewDistance,
                                int[] resIds,boolean isSpeedReverse){
-        this.isSpeedReverse = isSpeedReverse;
         this.resIds = resIds;
         this.speedEffect = speed;
-        this.distanceEffect = distance;
+        this.distanceEffect = viewDistance;
         if (isSpeedReverse)
             this.speedEffect *= -1;
     }
@@ -25,7 +30,7 @@ public class ParallaxTransformer implements ViewPager.PageTransformer {
     public void transformPage(View page, float position) {
 
        float moveLength = page.getWidth() * speedEffect;
-        for (int i = 0;i < resIds.length;i++){
+        for (int i = 0;i < resIds.length; i++){
             View view = page.findViewById(resIds[i]);
             if (view != null){
                 view.setTranslationX(moveLength * position);
